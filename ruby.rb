@@ -5,6 +5,13 @@ This is also an example of a multi-line comment
 =end
 
 
+#################
+## Basic Stuff ##
+#################
+
+# In terminal, 'irb' starts interactive ruby
+
+
 
 ########################
 ## Naming Conventions ##
@@ -14,7 +21,7 @@ This is also an example of a multi-line comment
 
 # Constants should be UPPER_CASE
 
-
+# Methods should be snake_case
 
 
 
@@ -117,8 +124,8 @@ name = "Eric"
 \n  #=> Newline. You'll likely use this one the most.
 \s  #=> Space
 \t  #=> Tab
-\"  #=> Double quotation mark"
-\'  #=> Single quotation mark'
+\" "#=> Double quotation mark
+\' '#=> Single quotation mark
 
 
 # Other common and useful string methods
@@ -132,6 +139,13 @@ name = "Eric"
 "hello world".split     # => ["hello", "world"]
 "hello".split("")       # => ["h", "e", "l", "l", "o"]
 "hello      ".strip     # => "hello"
+"hello".each_char       # enumerates each character
+
+# #ord converts alpha character to numeric value:
+'a'.ord  # => 94
+
+# #chr converts numeric value to alpha character
+94.chr   # => 'a'
 
 
 
@@ -241,7 +255,7 @@ end
 array.each_with_index { |item, index| puts '#{item} #{index}' }
 
 # #map (or #collect) returns a new array with a method applies to all elements
-# #map! modifies the array in-place
+# #map! (bang) modifies the array in-place
 users = users.map { |user| user.capitalize}
 users = users.map(&:capitalize)
 users.map!(&:capitalize)
@@ -522,3 +536,50 @@ end
 5.upto(10) { |num| print "#{num} " }    # => 5 6 7 8 9 10
 10.downto(5) { |num| print "#{num}"}    # => 10 9 8 7 6 5
 
+
+
+
+
+
+
+
+
+#############
+## Methods ##
+#############
+
+# Method names can end in ?, !, and =
+# Reserved words: http://www.java2s.com/Code/Ruby/Language-Basics/Rubysreservedwords.htm
+
+def method_name(arguments = 'defailt parameters')
+  #do something
+  new_thing = arguments
+  return new_thing
+end
+
+# Ruby allows implicit returns, but stick with explicit
+
+## Predicate Methods
+# Predicates end with ? and are a naming convention indicating that a boolean is returned
+
+## Bang Methods
+# Bangs end with ! and are a naming convention indicating that the object will be mutated vs. returning a modified copy
+
+
+
+
+
+
+
+########################
+## Debugging with Pry ##
+########################
+# https://learn.co/lessons/debugging-with-pry
+
+# Aftering installing the pry gem, bindings allow breakpoints
+require 'pry'
+
+# do something
+binding.pry
+
+# Pry REPL will allow debugging of variables
