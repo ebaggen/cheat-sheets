@@ -487,6 +487,35 @@ def type_hinted_function(my_int: int, my_string: str, my_default_int = 0: int) -
 
 
 
+
+'''
+Built-in Higher Order Functions
+
+Higher order functions are functions that accept a function as an argument or return a function for further processing
+Python includes some handy functions that simplify iterable processing.
+'''
+
+### Map
+# Map performs a function on every element in an iterable objects
+words = ['word', 'apple', 'peanut']
+capitalized_words = map(lambda w: w.upper(), words)
+print(list(capitalized_words))
+# >>> ['WORD', 'APPLE', 'PEANUT']
+
+
+### Filter
+# Filter performs a function on every element. Those that return true are appended to the returned iterable
+numbers = [1, 2, 30, 40, 50]
+large_numbers = filter(lambda n: len(n) > 10, numbers)
+print(list(large_numbers))
+# >>> [30, 40, 50]
+
+
+# 
+
+
+
+
 '''
 DECORATORS 
 
