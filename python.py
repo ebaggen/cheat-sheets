@@ -21,7 +21,7 @@ def decorator(function):
 
 # This is a decorator in use:
 @decorator
-def hello_world:
+def hello_world():
     print('Hello world!')
 
 # output:
