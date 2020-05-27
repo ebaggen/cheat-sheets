@@ -551,7 +551,7 @@ end
 # Method names can end in ?, !, and =
 # Reserved words: http://www.java2s.com/Code/Ruby/Language-Basics/Rubysreservedwords.htm
 
-def method_name(arguments = 'defailt parameters')
+def method_name(arguments = 'default parameters')
   #do something
   new_thing = arguments
   return new_thing
